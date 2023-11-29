@@ -7,8 +7,6 @@ const deleteProgress = async (req, res) => {
     res.status(200).json({ msg: "Ação realizada com sucesso!" })
 }
 const addProgress = async (req, res) => {
-
-
     const { usuarioid } = req.user
     const { jogoid, progressoid } = req.body
 
