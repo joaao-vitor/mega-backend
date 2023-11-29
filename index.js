@@ -38,6 +38,6 @@ server.use('/api/review', reviewRouter)
 server.use('/api/catProgresso', catProgressoRouter)
 server.use('/api/userProgress', userProgressRouter)
 
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log('funcionando')
 })
