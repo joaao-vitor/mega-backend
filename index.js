@@ -27,7 +27,7 @@ server.use(express.json())
 server.use(cors())
 server.use(cookieParser(process.env.JWT_SECRET))
 server.get('/', (req, res) => {
-    return res.json({msg: "Servidor funcionando!"})
+    res.json({msg: "Servidor funcionando!"})
 })
 
 server.use('/api/jogos', rotas)
