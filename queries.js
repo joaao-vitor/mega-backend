@@ -4,7 +4,7 @@ const getGame = "SELECT * FROM jogo";
 const getEmpsGame = "select ej.empresaid, nome, descricao, contato from empresa_jogo as ej join empresa as e on ej.empresaId = e.empresaId where ej.jogoid = $1";
 const getGameByName = "SELECT * FROM jogo WHERE nome LIKE $1";
 const getById = "SELECT * FROM jogo WHERE jogoID = $1";
-const getRateByUserId = "SELECT * FROM avaliacao WHERE usuarioID = $1";
+const getRateByUserId = "SELECT * FROM avaliacao WHERE usuarioID = $1 and jogoid = $2";
 const getRate = "SELECT * FROM avaliacao";
 const getGroup = "SELECT * FROM grupo";
 const getAdvance = "SELECT * FROM progressojogo";

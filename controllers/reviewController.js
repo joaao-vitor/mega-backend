@@ -19,7 +19,7 @@ const addReview = async (req, res) => {
     const { descricao, classificacao, jogoid } = req.body
     const { usuarioid } = req.user
     const data = new Date()
-    if ((await pool.query(queries.getRateByUserId, [usuarioid])).rowCount > 0) {
+    if ((await pool.query(queries.getRateByUserId, [usuarioid, jogoid])).rowCount > 0) {
         return res.status(400).json({ msg: "Você já possui uma avaliação!" })
     }
     pool.query(queries.addRate, [usuarioid, descricao, classificacao, jogoid, data], (error, results) => {
